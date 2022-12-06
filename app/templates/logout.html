@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}Логаут{% endblock %}
+
+{% block body %}
+<h2>Работа завершена</h2>
+
+<a href="{% url 'login'%}">Нажмите здесь, чтобы вернуться к авторизации</a>
+<br>
+<a href="{% url 'index'%}">На главную</a>
+{% endblock %}

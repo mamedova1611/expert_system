@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}Главная{% endblock %}
+{% block body %}
+
+    <form method="post" action="{% url 'form' %}">
+        {% csrf_token %}
+        <h2>{{ i.question }}</h2>
+        {% for a in answer %}
+        <input type="radio" class="radio" name="answer" value="{{ a.score }}"><label>{{ a.answer }}</label>
+        <input hidden name="score" value="{{ i.question }}">
+            <input hidden name="id" value="{{ i.id }}">
+        {% endfor %}
+{#        <input type="submit" name='no' value="Нет ответа"></input>#}
+    <input type="submit" name='form' value="Следующий вопрос"></input>
+    {% if last %}
+    <input type="submit" name='rec' value="Получить рекомендацию"></input>
+    {% endif %}
+    </form>
+
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'expert.html' %}
+{% block title %}{% endblock %}
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        {{ question_form.as_p }}
+        <button class="button">Сохранить</button>
+   </form>
+
+{% endblock %}

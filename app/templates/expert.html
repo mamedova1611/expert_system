@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/workers.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <title>{% block title %}Эксперт{% endblock %}</title>
+</head>
+<body>
+
+<header>
+        <div id="Navigation">
+<nav class="Navigation">
+    {#<button type="submit"><a href="{% url 'zpu' %}">ZPU</a></button>#}
+<button class="button" type="submit"><a href="{% url 'options' %}">Варианты ответов</a></button>
+<button class="button" type="submit"><a href="{% url 'questions' %}">Вопросы</a></button>
+    <button class="button" type="submit"><a href="{% url 'result' %}">Рекомендации</a></button>
+    <button class="button" type="submit"><a href="{% url 'logout' %}">Выход</a></button>
+</nav>
+        </div>
+    </header>
+<section>
+    {% block content %}
+        {% endblock %}
+</section>
+</body>
+</html>

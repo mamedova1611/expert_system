@@ -1,0 +1,15 @@
+{% extends 'expert.html' %}
+
+{% block title %}Редактирование{% endblock %}
+
+{% block content %}
+    <form method="post" action="{% url 'question_edit' question_id %}">
+    {% csrf_token %}
+    {{ question_form.as_p }}
+    <button class="button" type="submit">Сохранить</button>
+    </form>
+    <form method="post" action="{% url 'question_del' question_id %}">
+    {% csrf_token %}
+    <button class="button" type="submit">Удалить</button>
+    </form>
+{% endblock %}

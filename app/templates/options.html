@@ -1,0 +1,23 @@
+{% extends 'expert.html' %}
+{% block title %}{% endblock %}
+{% block content %}
+    <h2>Варианты ответов</h2>
+    <button class="button btn-table" type="button" ><a href="{% url 'options_form' %}">Добавить</a> </button>
+
+    <div>
+    <table class="table table-hover">
+        <th> № </th>
+        <th> Ответ </th>
+        <th> Балл </th>
+
+        {% for i in options %}
+        <tr>
+            <td>
+                <a href="{% url 'options_edit' i.id %}">{{ i.id }}</a></td>
+            <td> {{ i.answer }}</td>
+        <td> {{ i.score }}</td>
+        </tr>
+        {% endfor %}
+        </table>
+    </div>
+{% endblock %}
